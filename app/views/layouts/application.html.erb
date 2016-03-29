@@ -8,39 +8,56 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
-	<div id="sidebar">
-		<div id="logo">
-			<%= link_to root_path do %>
-				<%= image_tag "branding.png" %>
-			<% end %>
-		</div>
 
-		<ul>
-			<li class="category">Website</li>
-		</ul>
-
-		<ul>
-			<li class="category">Social</li>
-			<li><a href="http://mauricemcerlean.com">My Portfolio</a></li>
+<div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+               		
+		
+                 <li><%= link_to "My Blog", root_path %></li>
+        		 <li><%= link_to "About Me", about_path %></li>
+                	<br>
+            <li><a href="http://mauricemcerlean.com">My Website</a></li>
 			<li><a href="https://twitter.com/MauriceMcErlean">Twitter</a></li>
 			<li><a href="https://www.instagram.com/whoismostash">Instagram</a></li>
 			<li><a href="https://github.com/mauricemcerlean">Github</a></li>
 			<li><a href="mailto:mauricemcerlean@hotmail.co.uk">Email</a></li>
-		</ul>
 
-		<p class="sign_in">Admin Login</p>
-		</div>
+
+			<br><br><br>
+			<% if !user_signed_in? %>
+		<li class ="adminlogin">Admin Login</li>
+		<% end %>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
 
 		<div id ="main_content">
 			<div id ="header">
-				<p>All posts</p>
+				<% if current_page?(root_path) %>
+				<p>All Posts</p>
+			<% elsif current_page?(about_path) %>
+				<p>About</p>
+			<% else %>
+				<%= link_to "Back to All Posts", root_path %>
+			<% end %>
 
+			<% if user_signed_in? %>
 				<div class ="buttons">
 					<button class="button"><%= link_to "New Post", new_post_path %></button>
 					<button class ="button">Log Out</button>
 				</div>
+				<% end %>
 				</div>
 
 		<% flash.each do |name, msg| %>
