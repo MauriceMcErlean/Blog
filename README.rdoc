@@ -4,3 +4,13 @@ You can download this application and just boot it from your local directory if 
 
 * Ruby version - ruby '2.1.8'
 
+* Database - 'PostgreSQL' 
+
+* Gem list - Availalbe in gemfile
+
+
+*TO ADD USERS TO ALLOW FOR POSTING, YOU MUST ENABLE THE REGISTRATION IN model/user.rb
+
+	devise :database_authenticatable,:registerable,
+           :recoverable, :rememberable, :trackable, :validatable
+  end
