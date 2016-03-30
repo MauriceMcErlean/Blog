@@ -10,7 +10,8 @@ You can download this application and just boot it from your local directory if 
 
 
 *TO ADD USERS TO ALLOW FOR POSTING, YOU MUST ENABLE THE REGISTRATION IN model/user.rb
-
+<dl>
 	<dd>devise :database_authenticatable,:registerable,
            :recoverable, :rememberable, :trackable, :validatable
   end</dd>
+  </dl>
