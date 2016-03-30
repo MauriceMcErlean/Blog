@@ -6,7 +6,7 @@ You can download this application and just boot it from your local directory if 
 
 * Database - 'PostgreSQL' 
 
-* Gem list - Availalbe in gemfile
+* Gem list - Available in gemfile
 
 
 *TO ADD USERS TO ALLOW FOR POSTING, YOU MUST ENABLE THE REGISTRATION IN model/user.rb
