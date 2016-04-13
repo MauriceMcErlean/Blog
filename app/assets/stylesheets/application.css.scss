@@ -341,3 +341,18 @@ a {
         position: relative;
         margin-right: 0;
     }
+
+@media(min-width:768px) {
+    #sidebar-wrapper {
+       width: 120px;
+    }
+
+#main_content {
+    margin-left: 100px;
+}
+
+.sidebar-nav {
+    width: 120px;
+}
+
+    }
