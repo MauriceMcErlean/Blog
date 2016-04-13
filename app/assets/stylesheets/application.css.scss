@@ -342,7 +342,7 @@ a {
         margin-right: 0;
     }
 
-@media(min-width:560px) {
+@media(max-width:560px) {
     #sidebar-wrapper {
        width: 120px;
     }
